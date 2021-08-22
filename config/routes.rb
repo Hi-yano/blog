@@ -1,3 +1,9 @@
+# 名前空間を意識したルーティングの設定
+# 最初から以下の様にバージョンで名前空間を作成しておくことで今後のAPIのバージョン管理が容易になる。
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  namespace 'api' do
+    namespace 'v1' do
+      resources :posts
+    end
+  end
 end
